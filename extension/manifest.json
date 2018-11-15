@@ -1,0 +1,26 @@
+{
+  "version": "1.0",
+  "name": "Dynamic Yield Test",
+  "description": "Build a User Affinity Extension!",
+  "permissions": ["activeTab", "declarativeContent", "storage", "tabs", "https://www.urbanoutfitters.com/*"],
+
+  "background": {
+    "scripts": ["eventPage.js"],
+    "persistent": false
+  },
+
+  "content_scripts":[
+      {
+        "matches":["https://www.urbanoutfitters.com/shop", "https://www.urbanoutfitters.com/checkout","https://www.urbanoutfitters.com/*"],
+        "js":["contentscripts.js"],
+        "css":["style.css"]
+      }
+  ],
+
+  "page_action": {
+    "default_icon": "icon.jpeg",
+    "default_title": "helper",
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 2
+}
